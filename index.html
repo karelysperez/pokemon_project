@@ -2,20 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pokemon_project</title>
-    <link rel="stylesheet" href="/src/style.css">
   </head>
   <body>
-    <div id="app">
-        <h1>Pokemon Battle Analyzer</h1>
-        <p class="hint">Pasa mouse sobre el pokemon para ver su espalda (si existe)</p>
-        <div class="controls">
-            <button id="btn-new">Start new Battle</button>
-            <button id="btn-battle" disabled>Battle</button>
+    <main id="app">
+        <div class="topbar">
+            <button id="btn-start" class="btn-start-battlle">Back</button>
         </div>
-    </div>
-    <script type="module" src="/src/main.js"></script>
+
+        <h1 id="vs-title" class="vs-title">-VS-</h1>
+
+        <section class="fighters">
+            <article class="poke-card">
+                <h3 id="name-1" class="poke-name">-</h3>
+                <img id="img-1" alt="pokemon 1" />
+                <p class="stat-line">HP: <span id="hp-1">-</span></p>
+            </article>
+
+            <article class="poke-card">
+                <h3 id="name-2" class="poke-name">-</h3>
+                <img id="img-2" alt="pokemon 2" />
+                <p class="stat-line">HP: <span id="hp-2">-</span></p>
+            </article>
+        </section>
+
+        <p class="hint">Winner is the one with the higher Attack stat!</p>
+
+        <div class="actions">
+            <button id="btn-battle" class="btn-primary" disabled>Battle</button>
+        </div>
+
+        <section class="result" id="result"></section>
+
+        <section class="same-type" id="same-type" hidden>
+            <h4 id="winner-head" class="winner-head" hidden>-</h4>
+            <p id="winner-type" class="winner-type" hidden>Type: -</p>
+            <div class="same-grid" id="same-grid"></div>
+        </section>
+
+    </main>
+
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
