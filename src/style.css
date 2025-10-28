@@ -112,12 +112,13 @@ body {
 }
 
 .poke-card {
-    background: var(--card);
     padding: 24px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
     box-shadow: var(--shadow-lg);
     transition: all 0.3s ease;
+    background:
+    url("public/grass.jpeg") center/cover no-repeat;
 }
 
 .poke-card:hover {
