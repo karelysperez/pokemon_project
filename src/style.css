@@ -21,10 +21,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-}
-
 body {
     margin: 0;
     background: linear-gradient(135deg, #f6f7fb 0%, #e9ecf5 100%);
@@ -207,13 +203,14 @@ body {
     margin: 0 0 20px;
     color: var(--muted);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 24px;
+    display: block;
+    text-align: center;
 }
 
 .same-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
-    gap: 16px;
+    display: inline-flex;
+    gap: 24px;
     justify-content: center;
     max-width: 400px;
     margin: 0 auto;
