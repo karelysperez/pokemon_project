@@ -60,7 +60,6 @@ function renderPokemonSlot(slotNumber, pokemon) {
 
 function clearBattleResult() {
     querySelector('#result').textContent = '';
-    querySelector('#winner-head').textContent = '';
     querySelector('#winner-type').textContent = '';
     querySelector('#same-grid').innerHTML = '';
     querySelector('#same-type').hidden = true;
@@ -129,11 +128,26 @@ function announceWinner() {
     }
 
     const winningPokemon = firstPokemon.attack > secondPokemon.attack ? firstPokemon : secondPokemon;
+    const winningSlotNumber = winningPokemon === firstPokemon ? 1 : 2;
+
+    const winnerImg = querySelector(`#img-${winningSlotNumber}`);
+    flashOnce(winnerImg);
+
     resultElement.textContent = `The Winner is: ${winningPokemon.name}!`;
-    querySelector('#winner-head').textContent = `${winningPokemon.name}!`;
     querySelector('#winner-type').textContent = `Type: ${winningPokemon.typeName}`;
 
     loadSameTypePokemon(winningPokemon).catch(console.error);
+}
+
+function flashOnce(element) {
+    element.classList.remove('flash-once');
+
+    void element.offsetWidth;
+    element.classList.add('flash-once');
+
+    element.addEventListener('animationend', () => {
+        element.classList.remove('flash-once');
+    }, { once: true });
 }
 
 async function loadSameTypePokemon(winningPokemon) {

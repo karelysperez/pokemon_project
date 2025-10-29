@@ -143,6 +143,15 @@ body {
     transform: scale(1.05);
 }
 
+@keyframes flashPulse {
+    0%, 100% { filter: none; opacity: 1; }
+    50%      { filter: brightness(1.8); opacity: 0.6; }
+}
+
+.flash-once {
+    animation: flashPulse 0.6s ease-in-out 3;
+}
+
 .stat-line {
     color: var(--muted);
     font-weight: 600;
@@ -191,14 +200,6 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-.winner-head {
-    margin: 0 0 8px;
-    font-weight: 700;
-    font-size: 18px;
-    text-transform: capitalize;
-    color: var(--fg);
-}
-
 .winner-type {
     margin: 0 0 20px;
     color: var(--muted);
@@ -206,6 +207,7 @@ body {
     font-size: 24px;
     display: block;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .same-grid {
