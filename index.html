@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/pokemon_project/pokeIcon.png" />
+    <title>pokemon_project</title>
+
+    <script type="module" crossorigin src="/pokemon_project/assets/index-CJ4yvU21.js"></script>
+    <link rel="stylesheet" crossorigin href="/pokemon_project/assets/index-BiiAagRw.css">
+  </head>
+  <body>
+    <main id="app">
+        <div class="topbar">
+            <button id="btn-start" class="btn btn-start">Start New Battle</button>
+        </div>
+
+        <h1 id="vs-title" class="vs-title">-VS-</h1>
+
+        <section class="fighters">
+            <article class="poke-card">
+                <h3 id="name-1" class="poke-name">-</h3>
+                <img id="img-1" alt="pokemon 1" />
+                <p class="stat-line">HP: <span id="hp-1">-</span> ATK: <span id="atk-1">-</span></p>
+            </article>
+
+            <article class="poke-card">
+                <h3 id="name-2" class="poke-name">-</h3>
+                <img id="img-2" alt="pokemon 2" />
+                <p class="stat-line">HP: <span id="hp-2">-</span> ATK: <span id="atk-2">-</span></p>
+            </article>
+        </section>
+
+        <p class="hint">Winner is the one with the higher Attack stat!</p>
+
+        <div class="actions">
+            <button id="btn-battle" class="btn btn-primary" disabled>Battle</button>
+        </div>
+
+        <section class="result" id="result"></section>
+
+        <section class="same-type" id="same-type" hidden>
+            <p id="winner-type" class="winner-type" hidden>Type: -</p>
+            <div class="same-grid" id="same-grid"></div>
+        </section>
+
+    </main>
+
+  </body>
+</html>
